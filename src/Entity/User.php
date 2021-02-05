@@ -15,20 +15,44 @@ class User
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
+    private $id;
 
-    private int $id = null;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $username;
 
-    private string $username = null;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $password;
 
-    private string $password = null;
-
-    public function setUsername($username): ?string
+    public function getId(): ?int
     {
-        return $this.$username = $username;
+        return $this->id;
     }
 
-    public function setPassword($password): ?string
+    public function getUsername(): ?string
     {
-        return $this.$password = $password;
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
     }
 }
