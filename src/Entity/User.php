@@ -15,9 +15,12 @@ class User
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $username;
 
-    private $password;
+    private int $id = null;
+
+    private string $username = null;
+
+    private string $password = null;
 
     public function setUsername($username): ?string
     {
